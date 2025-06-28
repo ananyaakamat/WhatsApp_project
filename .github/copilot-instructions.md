@@ -14,7 +14,8 @@ This document defines the structured, tool-integrated AI project workflow within
 - Use PowerShell – Prefer PowerShell over Command Prompt for scripting and system tasks.
 
 ## Mandatory Tool Usage
-The following tools must be applied as per task requirements:
+The following tools must be used based on the specific requirements of each task. Additionally, verify which tools are available for a particular MCP to ensure efficient and appropriate usage:
+Ensure that the required MCP is in a running state before use. If it is currently stopped, start the MCP before proceeding with any tool operations.
 - Sequential Thinking: Core for breaking down multi-step problems
 - Kite: Trading and stock market data
 - Git / GitHub: Version control, repository integration
