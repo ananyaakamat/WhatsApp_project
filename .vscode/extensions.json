@@ -1,0 +1,58 @@
+{
+  "recommendations": [
+    // AI and Copilot
+    "github.copilot",
+    "github.copilot-chat",
+
+    // Python Development
+    "ms-python.python",
+    "ms-python.black-formatter",
+    "ms-python.isort",
+    "ms-python.pylint",
+    "ms-python.mypy-type-checker",
+    "ms-python.docstring-generator",
+
+    // Web Development
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-typescript-next",
+
+    // Git and Version Control
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    "mhutchie.git-graph",
+
+    // Documentation and Markdown
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    "ms-vscode.wordcount",
+
+    // Code Quality and Testing
+    "ms-vscode.test-adapter-converter",
+    "hbenl.vscode-test-explorer",
+    "ryanluker.vscode-coverage-gutters",
+    "sonarsource.sonarlint-vscode",
+
+    // Productivity and Utilities
+    "ms-vscode.powershell",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vscode-remote.remote-containers",
+    "alefragnani.project-manager",
+    "gruntfuggly.todo-tree",
+    "streetsidesoftware.code-spell-checker",
+
+    // Themes and UI
+    "pkief.material-icon-theme",
+    "github.github-vscode-theme",
+
+    // Database and APIs
+    "ms-mssql.mssql",
+    "humao.rest-client",
+
+    // Configuration Files
+    "redhat.vscode-yaml",
+    "ms-vscode.vscode-json"
+  ],
+  "unwantedRecommendations": ["ms-python.python-extension-pack"]
+}

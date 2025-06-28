@@ -1,0 +1,274 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Python: Setup Virtual Environment",
+      "type": "shell",
+      "command": "python",
+      "args": ["-m", "venv", "venv"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Create a Python virtual environment"
+    },
+    {
+      "label": "Python: Install Requirements",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/Scripts/python.exe",
+      "args": ["-m", "pip", "install", "-r", "requirements.txt"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Install Python requirements in virtual environment"
+    },
+    {
+      "label": "Python: Install Dev Requirements",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/Scripts/python.exe",
+      "args": ["-m", "pip", "install", "-r", "requirements-dev.txt"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Install Python development requirements"
+    },
+    {
+      "label": "Python: Run Tests",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/Scripts/python.exe",
+      "args": [
+        "-m",
+        "pytest",
+        "tests/",
+        "-v",
+        "--cov=src",
+        "--cov-report=html"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Run Python tests with coverage"
+    },
+    {
+      "label": "Python: Lint Code",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/Scripts/python.exe",
+      "args": ["-m", "pylint", "src/"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Lint Python code with pylint"
+    },
+    {
+      "label": "Python: Type Check",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/Scripts/python.exe",
+      "args": ["-m", "mypy", "src/"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Type check Python code with mypy"
+    },
+    {
+      "label": "Python: Format Code",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/Scripts/python.exe",
+      "args": ["-m", "black", "src/", "tests/"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Format Python code with Black"
+    },
+    {
+      "label": "Python: Sort Imports",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/Scripts/python.exe",
+      "args": ["-m", "isort", "src/", "tests/"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Sort Python imports with isort"
+    },
+    {
+      "label": "Python: Security Check",
+      "type": "shell",
+      "command": "${workspaceFolder}/venv/Scripts/python.exe",
+      "args": ["-m", "bandit", "-r", "src/"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Security check Python code with bandit"
+    },
+    {
+      "label": "Web: Install Dependencies",
+      "type": "shell",
+      "command": "npm",
+      "args": ["install"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Install Node.js dependencies"
+    },
+    {
+      "label": "Web: Build",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Build web application"
+    },
+    {
+      "label": "Web: Dev Server",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "dev"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Start development server",
+      "isBackground": true
+    },
+    {
+      "label": "Web: Test",
+      "type": "shell",
+      "command": "npm",
+      "args": ["test"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Run JavaScript/TypeScript tests"
+    },
+    {
+      "label": "Git: Sync with Remote",
+      "type": "shell",
+      "command": "git",
+      "args": ["pull", "origin", "main"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "detail": "Pull latest changes from remote"
+    },
+    {
+      "label": "Project: Full Setup",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Python: Setup Virtual Environment",
+        "Python: Install Requirements",
+        "Python: Install Dev Requirements"
+      ],
+      "group": "build",
+      "detail": "Complete project setup"
+    },
+    {
+      "label": "Quality: Full Check",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Python: Lint Code",
+        "Python: Type Check",
+        "Python: Security Check",
+        "Python: Run Tests"
+      ],
+      "group": "test",
+      "detail": "Run all quality checks"
+    }
+  ]
+}

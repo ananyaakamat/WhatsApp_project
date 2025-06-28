@@ -1,0 +1,47 @@
+# Development Dependencies
+# Additional tools for development, testing, and code quality
+
+# Testing
+pytest>=7.4.3
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+pytest-asyncio>=0.21.1
+pytest-xdist>=3.5.0
+factory-boy>=3.3.0
+
+# Code Quality
+black>=23.12.0
+isort>=5.13.2
+pylint>=3.0.3
+mypy>=1.8.0
+bandit>=1.7.5
+flake8>=6.1.0
+
+# Documentation
+sphinx>=7.2.6
+sphinx-rtd-theme>=2.0.0
+sphinx-autodoc-typehints>=1.25.2
+
+# Development Tools
+pre-commit>=3.6.0
+tox>=4.11.4
+coverage>=7.3.2
+
+# Debugging
+pdbpp>=0.10.3
+ipython>=8.18.1
+ipdb>=0.13.13
+
+# Performance
+memory-profiler>=0.61.0
+line-profiler>=4.1.1
+
+# Jupyter (for experimentation)
+jupyter>=1.0.0
+notebook>=7.0.6
+
+# API Documentation (if using FastAPI)
+redoc-cli>=0.2.3
+
+# Environment management
+python-dotenv>=1.0.0

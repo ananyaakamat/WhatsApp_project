@@ -1,0 +1,32 @@
+# Production Dependencies
+# Core dependencies for the application
+
+# Web framework (if applicable)
+fastapi>=0.104.1
+uvicorn[standard]>=0.24.0
+
+# Database
+sqlalchemy>=2.0.23
+alembic>=1.13.1
+
+# HTTP requests
+requests>=2.31.0
+httpx>=0.25.2
+
+# Data processing
+pandas>=2.1.4
+numpy>=1.24.4
+
+# Configuration
+pydantic>=2.5.2
+pydantic-settings>=2.1.0
+
+# Utilities
+python-dateutil>=2.8.2
+click>=8.1.7
+
+# Logging
+structlog>=23.2.0
+
+# Testing (minimal for production)
+pytest>=7.4.3
