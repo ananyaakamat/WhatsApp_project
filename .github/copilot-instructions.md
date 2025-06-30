@@ -2,10 +2,11 @@
 This document defines the structured, tool-integrated AI project workflow within VSCode for maximizing automation, reliability, and traceability across conversations and executions. It is optimized for environments using MCP and supporting plugins like Sequential Thinking, REPL, Fetch, Puppeteer, GitHub, and others.
 
 ## Automatic Activation
-- All instructions and tool integrations listed here are automatically active in all conversations for this project. Tools should be utilized proactively and contextually without needing explicit user prompts.
+- All instructions and tool integrations listed here are automatically active in all conversations for this project.
+- Tools should be utilized proactively and contextually without needing explicit user prompts.
 
 ## Default Auto-Active Tools:
-- kite, github, context7, playwright, excel, git, memory, sequential-thinking, puppeteer, filesystem, fetch, desktop-commander, zoom
+- kite, github, context7, playwright, excel, git, memory, sequential-thinking, puppeteer, filesystem, fetch, desktop-commander, zoom, notion, tavily, duckduckgo.
 
 ## Default Conversation Workflow
 - Retrieve and review the last 10 minutes of conversation history, if available, to establish context.
@@ -14,8 +15,10 @@ This document defines the structured, tool-integrated AI project workflow within
 - Use PowerShell – Prefer PowerShell over Command Prompt for scripting and system tasks.
 
 ## Mandatory Tool Usage
-The following tools must be used based on the specific requirements of each task. Additionally, verify which tools are available for a particular MCP to ensure efficient and appropriate usage:
-Ensure that the required MCP is in a running state before use. If it is currently stopped, start the MCP before proceeding with any tool operations.
+- The following tools must be used based on the specific requirements of each task.
+- Additionally, verify which tools are available for a particular MCP to ensure efficient and appropriate usage:
+- Ensure that the required MCP is in a running state before use. If it is currently stopped, start the MCP before proceeding with any tool operations.
+
 - Sequential Thinking: Core for breaking down multi-step problems
 - Kite: Trading and stock market data
 - Git / GitHub: Version control, repository integration
@@ -28,13 +31,16 @@ Ensure that the required MCP is in a running state before use. If it is currentl
 - Desktop Commander: Advanced desktop/system file interactions
 - Artifacts: For code, visualizations, or documents requiring export
 - Zoom: Meeting scheduling and interaction
+- DuckDuckgo: Privacy-focused web search engine for general web information retrieval
+- Notion: Document management and collaboration platform integration
+- Tavily: AI-powered search engine for comprehensive web information retrieval
 
 ## Source Documentation Standards
 - All retrieved or referenced external content must be fully traceable:
 - Full URL, title, and timestamp for web search results and screenshots
 - Cite access dates for all external data or references
 - Maintain links in knowledge graphs and summaries
-- Use Fetch or Brave Search to retain metadata
+- Use Fetch or DuckDuckgo to retain metadata
 - External quotes must include direct source links
 
 ## Core Workflow Phases
@@ -44,7 +50,7 @@ Ensure that the required MCP is in a running state before use. If it is currentl
 - Select tools accordingly
 - Plan for parallelization where applicable
 
-### 2. Search Phase – Fetch / Brave Search
+### 2. Search Phase – Fetch / DuckDuckgo
 - Begin with broad semantic or contextual queries
 - Narrow down using refined filters and offsets
 - Include query logs and metadata in output
@@ -68,9 +74,13 @@ Ensure that the required MCP is in a running state before use. If it is currentl
 - Create well-documented artifacts (.md, .ipynb, .py, .csv, etc.)
 - Highlight the final insights, traceability, and decision logic
 
-## Tool-Specific Best Practices
+###6. Memory: Check if new entities are required for persistent memory storage to maintain context across conversations.
 
-### Fetch / Brave Search
+## Tool-Specific Best Practices
+### Tavily
+- Use for comprehensive web information retrieval
+
+### Fetch / DuckDuckgo
 - Use count, offset, and query scoping
 - Document each query string and output summary
 - Include metadata: title, URL, snippet, accessed date/time
