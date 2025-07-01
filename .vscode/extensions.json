@@ -1,4 +1,6 @@
 {
+  // Extension recommendations disabled
+  /*
   "recommendations": [
     // AI and Copilot
     "github.copilot",
@@ -55,4 +57,5 @@
     "ms-vscode.vscode-json"
   ],
   "unwantedRecommendations": ["ms-python.python-extension-pack"]
+  */
 }
