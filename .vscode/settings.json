@@ -9,25 +9,25 @@
     {
       "file": "docs/python-best-practices.md"
     },
-    {
-      "file": "docs/html-js-css-best-practices.md"
-    },
+    // {
+    //   "file": "docs/html-js-css-best-practices.md"
+    // },
     {
       "file": "docs/python-documentation-best-practices.md"
-    },
-    {
-      "file": "docs/playwright-testing-best-practices.md"
     }
+    // {
+    //   "file": "docs/playwright-testing-best-practices.md"
+    // }
   ],
 
   // Test generation instructions
   "github.copilot.chat.testGeneration.instructions": [
     {
       "file": "docs/unit-testing-best-practices.md"
-    },
-    {
-      "file": "docs/playwright-testing-best-practices.md"
     }
+    // {
+    //   "file": "docs/playwright-testing-best-practices.md"
+    // }
   ],
 
   // Code review instructions
@@ -35,18 +35,18 @@
     {
       "file": "docs/python-best-practices.md"
     },
-    {
-      "file": "docs/html-js-css-best-practices.md"
-    },
+    // {
+    //   "file": "docs/html-js-css-best-practices.md"
+    // },
     {
       "file": "docs/python-documentation-best-practices.md"
     },
     {
       "file": "docs/unit-testing-best-practices.md"
-    },
-    {
-      "file": "docs/playwright-testing-best-practices.md"
     }
+    // {
+    //   "file": "docs/playwright-testing-best-practices.md"
+    // }
   ],
 
   // Commit message generation instructions
