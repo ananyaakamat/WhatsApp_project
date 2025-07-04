@@ -93,6 +93,20 @@ env/
 ENV/
 .venv/
 
+# Executable files (but allow specific ones)
+*.exe
+!whatsapp-mcp/whatsapp-bridge/whatsapp-bridge.exe
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# WhatsApp specific files
+whatsapp-mcp/whatsapp-bridge/store/
+whatsapp-mcp/whatsapp-mcp-server/.venv/
+whatsapp-mcp/whatsapp-mcp-server/__pycache__/
+
 # Memory files from MCP servers
 memory.json
 
