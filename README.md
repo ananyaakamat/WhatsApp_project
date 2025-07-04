@@ -1,209 +1,187 @@
-# AI-Assistant-Friendly Development Environment
+# WhatsApp MCP Server
 
-A comprehensive reference project that provides an optimal development environment setup for AI-assisted programming with GitHub Copilot and VS Code.
+A Model Context Protocol (MCP) server that enables AI assistants to send and receive WhatsApp messages through a secure bridge architecture.
 
-## 🚀 Quick Start
+## 🚀 Features
 
-```bash
-# Use this project as a template
-git clone <this-repo-url>
-cd Reference_project
+- **Send WhatsApp Messages**: Send text messages to any WhatsApp number
+- **Receive Messages**: Retrieve and search through WhatsApp conversations
+- **Audio Support**: Send and receive audio messages
+- **Media Handling**: Support for images, documents, and other media files
+- **Contact Management**: Search and manage WhatsApp contacts
+- **Group Support**: Interact with WhatsApp groups
+- **Secure Bridge**: Go-based bridge for WhatsApp Web API communication
 
-# For new Python projects, copy the template
-cp -r templates/python-project/* /path/to/your/new/project/
+## 🏗️ Architecture
 
-# Install recommended VS Code extensions when prompted
-# Start coding with AI assistance!
-```
+The project consists of two main components:
 
-## ✨ Features
-
-### 🤖 AI-Optimized Configuration
-
-- **GitHub Copilot Instructions**: Pre-configured with comprehensive best practice references
-- **Intelligent Code Generation**: AI follows established patterns and conventions
-- **Context-Aware Assistance**: Tailored instructions for different development tasks
-- **Quality-Focused Suggestions**: Emphasis on clean, maintainable, tested code
-
-### 📚 Comprehensive Best Practices
-
-- **Python Development**: PEP8, Clean Code, SOLID principles, modern Python features
-- **Web Development**: Semantic HTML, CSS architecture, modern JavaScript/TypeScript
-- **Documentation**: Type hints, docstrings, Sphinx automation, quality assurance
-- **Testing**: Unit testing strategies, web automation with Playwright, and quality assurance
-- **Version Control**: Conventional commit styles and PR best practices
-
-### ⚡ Pre-configured Development Environment
-
-- **VS Code Settings**: Formatting, linting, debugging, and productivity optimizations
-- **Extension Recommendations**: Curated list of essential development extensions
-- **Task Automation**: Pre-built tasks for testing, linting, building, and deployment
-- **Debug Configurations**: Ready-to-use debugging setups for multiple languages and frameworks
-
-### 🏗️ Project Templates
-
-- **Python Project Template**: Complete project structure with examples
-- **GitHub Workflows**: CI/CD pipelines with comprehensive quality checks
-- **Configuration Files**: .gitignore, requirements.txt, and other essential project files
-
-## 📁 Project Structure
+1. **WhatsApp MCP Server** (Python) - MCP server that provides the AI interface
+2. **WhatsApp Bridge** (Go) - Handles WhatsApp Web API communication
 
 ```
-Reference_project/
-├── .github/
-│   ├── workflows/
-│   │   └── python-ci.yml          # Comprehensive CI/CD pipeline
-│   └── copilot-instructions.md    # Global Copilot instructions
-├── .vscode/
-│   ├── settings.json              # Copilot instructions & development settings
-│   ├── extensions.json            # Recommended extensions
-│   ├── launch.json                # Debug configurations
-│   └── tasks.json                 # Automated development tasks
-├── docs/
-│   ├── python-best-practices.md           # Python coding standards
-│   ├── html-js-css-best-practices.md      # Web development standards
-│   ├── python-documentation-best-practices.md  # Documentation standards
-│   ├── unit-testing-best-practices.md     # Testing strategies
-│   ├── commit-style.md                    # Git commit conventions
-│   └── setup-guide.md                     # Comprehensive setup guide
-└── templates/
-    └── python-project/             # Complete Python project template
-        ├── src/main.py             # Example module with best practices
-        ├── tests/test_main.py      # Comprehensive test suite
-        ├── requirements.txt        # Production dependencies
-        ├── requirements-dev.txt    # Development dependencies
-        ├── .gitignore             # Python-specific gitignore
-        └── README.md              # Project template README
+AI Assistant (VSCode/Copilot)
+        ↓ (MCP Protocol)
+WhatsApp MCP Server (Python)
+        ↓ (HTTP API)
+WhatsApp Bridge (Go)
+        ↓ (WhatsApp Web API)
+WhatsApp
 ```
 
-## 🛠️ Available Tasks
+## � Installation
 
-Access via `Ctrl+Shift+P` → "Tasks: Run Task":
+### Prerequisites
 
-### Python Development
+- Python 3.11+
+- Go 1.21+
+- Node.js (for MCP integration)
+- uv (Python package manager)
 
-- **Setup & Dependencies**: `Python: Setup Virtual Environment`, `Python: Install Requirements`
-- **Code Quality**: `Python: Lint Code`, `Python: Type Check`, `Python: Security Check`
-- **Testing**: `Python: Run Tests` (with coverage reporting)
-- **Formatting**: `Python: Format Code`, `Python: Sort Imports`
+### Setup
 
-### Web Development
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/ananyaakamat/WhatsApp_project.git
+   cd WhatsApp_project
+   ```
 
-- **Dependencies**: `Web: Install Dependencies`
-- **Development**: `Web: Dev Server`, `Web: Build`
-- **Testing**: `Web: Test`
+2. **Set up the Python MCP Server**:
+   ```bash
+   cd whatsapp-mcp/whatsapp-mcp-server
+   uv venv
+   uv pip install -r requirements.txt
+   ```
 
-### Automation
+3. **Set up the Go Bridge**:
+   ```bash
+   cd ../whatsapp-bridge
+   go mod download
+   go build -o whatsapp-bridge main.go
+   ```
 
-- **Complete Setup**: `Project: Full Setup` (runs all setup tasks)
-- **Quality Assurance**: `Quality: Full Check` (runs all quality checks)
+## 🔧 Configuration
 
-## 🎯 Key Benefits
+### MCP Server Configuration
 
-### For Developers
+Add the WhatsApp MCP server to your VSCode settings.json:
 
-- ⚡ **Faster Setup**: Get productive immediately with pre-configured environment
-- 🎯 **Better AI Assistance**: Copilot provides more relevant, high-quality suggestions
-- 🔧 **Automated Quality**: Built-in linting, testing, and formatting
-- 📖 **Learning Resource**: Comprehensive examples of best practices
-- 🚀 **Modern Tooling**: Up-to-date with current development standards
-
-### For Teams
-
-- 🤝 **Consistency**: Standardized development environment across team members
-- 📚 **Knowledge Sharing**: Documented best practices and patterns
-- 🔍 **Code Review**: Automated quality checks reduce manual review overhead
-- 🎓 **Onboarding**: New developers can contribute quickly
-- 🔧 **Maintainability**: Clean, well-documented code patterns
-
-### For AI Assistants
-
-- 📋 **Clear Guidelines**: Comprehensive documentation for better code generation
-- 🎨 **Consistent Patterns**: Well-defined architectural patterns to follow
-- 🎯 **Context Awareness**: Task-specific instructions for different development activities
-- 📈 **Quality Focus**: Emphasis on maintainable, tested, documented code
-- 🌟 **Modern Standards**: Current industry best practices and conventions
-
-## 🚀 Getting Started
-
-### 1. For New Projects
-
-```bash
-# Copy the Python project template
-cp -r templates/python-project/* /path/to/your/new/project/
-cd /path/to/your/new/project/
-
-# Initialize git repository
-git init
-git add .
-git commit -m "feat: initial project setup from reference template"
-
-# Set up development environment
-# VS Code will prompt to install recommended extensions
-# Use Ctrl+Shift+P → "Tasks: Run Task" → "Project: Full Setup"
+```json
+{
+  "mcp": {
+    "servers": {
+      "whatsapp": {
+        "command": "uv",
+        "args": [
+          "--directory",
+          "/path/to/WhatsApp_project/whatsapp-mcp/whatsapp-mcp-server",
+          "run",
+          "main.py"
+        ]
+      }
+    }
+  }
+}
 ```
 
-### 2. For Existing Projects
+### Bridge Configuration
 
-```bash
-# Copy VS Code configuration
-cp -r .vscode/ /path/to/existing/project/
+The Go bridge will automatically start and handle WhatsApp Web authentication through QR code scanning.
 
-# Copy best practice documentation
-cp -r docs/ /path/to/existing/project/
+## 🚀 Usage
 
-# Copy GitHub workflows (optional)
-cp -r .github/ /path/to/existing/project/
+### Starting the Services
+
+1. **Start the Go Bridge**:
+   ```bash
+   cd whatsapp-mcp/whatsapp-bridge
+   ./whatsapp-bridge
+   ```
+
+2. **Scan QR Code**: The bridge will display a QR code for WhatsApp Web authentication
+
+3. **Use in AI Assistant**: The MCP server will automatically connect to the bridge
+
+### Available MCP Tools
+
+- `mcp_whatsapp_send_message` - Send text messages
+- `mcp_whatsapp_send_file` - Send media files
+- `mcp_whatsapp_send_audio_message` - Send audio messages
+- `mcp_whatsapp_list_messages` - Retrieve message history
+- `mcp_whatsapp_list_chats` - Get chat list
+- `mcp_whatsapp_search_contacts` - Search contacts
+- `mcp_whatsapp_get_message_context` - Get message context
+
+### Example Usage
+
+```python
+# Send a message
+await mcp_whatsapp_send_message(
+    recipient="1234567890",  # Phone number with country code
+    message="Hello from AI assistant!"
+)
+
+# Get recent messages
+messages = await mcp_whatsapp_list_messages(
+    limit=10,
+    sender_phone_number="1234567890"
+)
+
+# Send a file
+await mcp_whatsapp_send_file(
+    recipient="1234567890",
+    media_path="/path/to/file.pdf"
+)
 ```
 
-### 3. Customizing for Your Needs
+## 🔐 Security
 
-- **Update Dependencies**: Modify `requirements.txt` and `requirements-dev.txt`
-- **Customize Settings**: Adjust `.vscode/settings.json` for your preferences
-- **Add New Tasks**: Extend `.vscode/tasks.json` with project-specific tasks
-- **Modify Documentation**: Update best practice guides for your team's standards
+- The bridge runs locally and doesn't store credentials
+- All communication uses secure HTTP/HTTPS
+- WhatsApp Web sessions are managed securely
+- No message content is logged or stored permanently
 
-## 📖 Documentation
+## 🛠️ Development
 
-- **[Setup Guide](docs/setup-guide.md)**: Comprehensive setup and usage instructions
-- **[Python Best Practices](docs/python-best-practices.md)**: Python coding standards and patterns
-- **[Web Development Best Practices](docs/html-js-css-best-practices.md)**: HTML, CSS, JavaScript standards
-- **[Documentation Best Practices](docs/python-documentation-best-practices.md)**: Documentation and type hinting
-- **[Testing Best Practices](docs/unit-testing-best-practices.md)**: Testing strategies and patterns
-- **[Playwright Testing Best Practices](docs/playwright-testing-best-practices.md)**: Web automation and browser testing
-- **[Commit Style Guide](docs/commit-style.md)**: Git commit message conventions
+### Project Structure
 
-## 🤝 Contributing
+```
+WhatsApp_project/
+├── whatsapp-mcp/
+│   ├── whatsapp-mcp-server/     # Python MCP server
+│   │   ├── main.py              # MCP server implementation
+│   │   ├── whatsapp.py          # WhatsApp client wrapper
+│   │   ├── audio.py             # Audio message handling
+│   │   └── requirements.txt     # Python dependencies
+│   └── whatsapp-bridge/         # Go bridge
+│       ├── main.go              # Bridge server
+│       ├── go.mod               # Go module definition
+│       └── go.sum               # Go dependencies
+├── docs/                        # Documentation
+├── templates/                   # Project templates
+└── README.md                    # This file
+```
 
-We welcome contributions to improve this reference environment:
+### Contributing
 
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-improvement`
-3. **Make your changes**: Follow the established best practices
-4. **Update documentation**: Keep guides current and comprehensive
-5. **Submit a pull request**: Use the conventional commit format
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature-name`
+3. Make your changes and test thoroughly
+4. Commit with conventional commits: `git commit -m "feat: add new feature"`
+5. Push and create a Pull Request
 
-### Areas for Contribution
+## 📝 License
 
-- Additional language templates and best practices
-- New VS Code configurations and tasks
-- Enhanced GitHub Actions workflows
-- Documentation improvements and examples
-- Bug fixes and optimizations
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 📜 License
+## 🤝 Support
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- Create an issue for bug reports or feature requests
+- Check the documentation in the `docs/` folder
+- Review the example implementations in `templates/`
 
 ## 🙏 Acknowledgments
 
-- **GitHub Copilot Team**: For providing excellent AI assistance capabilities
-- **VS Code Team**: For creating an extensible and powerful development environment
-- **Python Community**: For establishing excellent coding standards and practices
-- **Open Source Contributors**: For the tools and libraries that make modern development possible
-
----
-
-**Happy Coding with AI Assistance! 🚀🤖**
-
-> This reference project is designed to maximize your productivity with AI-assisted development while maintaining high code quality standards.
+- Built using the Model Context Protocol (MCP) specification
+- WhatsApp Web API integration through go-whatsapp library
+- Inspired by the need for AI assistant WhatsApp integration
