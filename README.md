@@ -41,12 +41,14 @@ WhatsApp
 ### Setup
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/ananyaakamat/WhatsApp_project.git
    cd WhatsApp_project
    ```
 
 2. **Set up the Python MCP Server**:
+
    ```bash
    cd whatsapp-mcp/whatsapp-mcp-server
    uv venv
@@ -93,6 +95,7 @@ The Go bridge will automatically start and handle WhatsApp Web authentication th
 ### Starting the Services
 
 1. **Start the Go Bridge**:
+
    ```bash
    cd whatsapp-mcp/whatsapp-bridge
    ./whatsapp-bridge
